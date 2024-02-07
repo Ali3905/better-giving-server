@@ -16,7 +16,7 @@ const { connectToMongo } = require("./connections")
 // Creating app and connections
 const PORT = 5000
 const app = express()
-connectToMongo(process.env.MONGO_URL)
+connectToMongo("mongodb+srv://muhammadali30905:aliahmed@better-giving.en0hxvz.mongodb.net/")
 .then(console.log("Mongo connected"))
 .catch(err => console.log(err.message))
 
