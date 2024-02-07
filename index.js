@@ -1,3 +1,5 @@
+const dotenv = require("dotenv").config()
+
 const express = require("express")
 const cors = require("cors")
 
@@ -14,7 +16,7 @@ const { connectToMongo } = require("./connections")
 // Creating app and connections
 const PORT = 5000
 const app = express()
-connectToMongo("mongodb://127.0.0.1:27017/better-giving") // TODO put in env file
+connectToMongo(process.env.MONGO_URL)
 .then(console.log("Mongo connected"))
 .catch(err => console.log(err.message))
 
